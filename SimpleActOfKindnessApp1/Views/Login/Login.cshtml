@@ -1,0 +1,45 @@
+﻿
+@{ ViewBag.Title = "Login";}
+
+<div class="jumbotron">
+    <h1>SIMPLE ACT OF KINDNESS</h1>
+
+    <p class="lead"></p>
+
+</div>
+
+<form action="action_page.php">
+
+
+    <div class="container">
+        <label for="sposti"><b></b></label>
+        <input type="text" placeholder="Sähköpostiosoite" name="sposti" required>
+        <br />
+        <label for="psw"><b></b></label>
+        <input type="password" placeholder="Salasana" name="psw" required>
+        <br />
+        <label>
+            <input type="checkbox" name="muistaKäyttäjä"> Muista käyttäjä
+        </label>
+        <br />
+        <button type="submit">Kirjaudu</button>
+
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+
+        <span class="psw"><a href="#">Salasana unohtunut?</a></span>
+    </div>
+    <br />
+    <label>
+        <input type="checkbox" name="Faceb">Salli sovelluksen jakaa ilmoituksia Facebookissa
+    </label>
+    <br />
+    <label>
+        <input type="checkbox" name="Kamera">Salli sovelluksen käyttää kameraa
+    </label>
+    <br />
+    <label>
+        <input type="checkbox" name="Sijainti">Salli sovelluksen käyttää sijaintia
+    </label>
+</form> 

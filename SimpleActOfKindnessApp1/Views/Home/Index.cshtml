@@ -1,28 +1,44 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Login Page";
 }
 
 <div class="jumbotron">
     <h1>SIMPLE ACT OF KINDNESS</h1>
 
     <p class="lead"></p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg"> &raquo;</a></p>
+    
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2></h2>
+<form style="background-color:aqua" action="action_page.php">
    
-        <p><a class="btn btn-default" href=""></a></p>
+        <label for="sposti"><b></b></label>
+        <input type="text" placeholder="Sähköpostiosoite" name="sposti" required>
+        <br />
+        <label for="psw"><b></b></label>
+        <input type="password" placeholder="Salasana" name="psw" required>
+        <br />
+        <label>
+            <input type="checkbox" name="muistaKäyttäjä" style="margin-left:10px;"> Muista käyttäjä
+        </label>
+        <br />
+        <button type="submit" style="margin-left:10px;">Kirjaudu</button>
+
+    
+
+    <div class="container">
+
+        <span class="psw"><a href="#">Salasana unohtunut?</a></span>
     </div>
-    <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-        <p><a class="btn btn-default" href=""> </a></p>
-    </div>
-    <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-        <p><a class="btn btn-default" href=""> </a></p>
-    </div>
-</div>
+    <br />
+    <label style="background-color:aqua">
+        <input type="checkbox" name="Faceb" style="margin-left:10px;">Salli sovelluksen jakaa ilmoituksia Facebookissa
+    </label>
+    <br />
+    <label style="background-color:aqua">
+        <input type="checkbox" name="Kamera" style="margin-left:10px;">Salli sovelluksen käyttää kameraa
+    </label>
+    <br />
+    <label style="background-color:aqua">
+        <input type="checkbox" name="Sijainti" style="margin-left:10px;">Salli sovelluksen käyttää sijaintia
+    </label>
+</form> 
