@@ -1,0 +1,9 @@
+﻿button
+{
+    color:black;
+    text-decoration: wavy;
+    font-family: Calibri;
+    background: #0094ff;
+    display: block;
+    padding: 10px;
+}
