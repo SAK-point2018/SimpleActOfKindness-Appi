@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace SimpleActOfKindnessApp1.Controllers
 {
     public class MainPageController : Controller
@@ -14,5 +15,10 @@ namespace SimpleActOfKindnessApp1.Controllers
             return View(); 
         }
 
+        // GET: MainPage/Prize
+        public ActionResult Prize()
+        {
+            return RedirectToAction("Prize");
+        }
     }
 }
