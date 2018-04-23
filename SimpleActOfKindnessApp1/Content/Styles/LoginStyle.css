@@ -1,3 +1,37 @@
 ﻿body {
     background: linear-gradient(#116e65, #a7f1ea);
+    background-attachment:fixed;
+    align-content:center;
+    font-family:Calibri;
+}
+h1 {
+    font-family:'Curlz MT';
+    padding: 15px 30px;
+}
+#button {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Calibri;
+    color: #000000;
+    font-size: 16px;
+    background: #a7f1ea;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+
+#button:hover {
+    background: #116e65;
+    background-image: -webkit-linear-gradient(top, #116e65, #a7f1ea);
+    background-image: -moz-linear-gradient(top, #116e65, #a7f1ea);
+    background-image: -ms-linear-gradient(top, #116e65, #a7f1ea);
+    background-image: -o-linear-gradient(top, #116e65, #a7f1ea);
+    background-image: linear-gradient(to bottom, #116e65, #a7f1ea);
+    text-decoration: none;
+}
+#kirjaudu{
+    padding: 30px;
+}
+#salli {
+    padding: 30px;
 }

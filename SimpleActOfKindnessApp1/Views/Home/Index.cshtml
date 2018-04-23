@@ -1,15 +1,7 @@
 ﻿@{
     ViewBag.Title = "Login Page";
 }
-<head>
-    <title>Kirjautumissivu</title> 
-    <style>
-        #sisältö {
-            background: linear-gradient(#116e65, #a7f1ea);
-            align-content:center;
-        }
-           </style>
-</head>
+
 <div class="jumbotron">
     <h1>SIMPLE ACT OF KINDNESS</h1>
 
@@ -17,36 +9,4 @@
 
 </div>
 
-    <div id="sisältö" action="action_page.php">
-
-        <label for="sposti"><b></b></label>
-        <input type="text" placeholder="Sähköpostiosoite" name="sposti" required style="margin-left: 250px;">
-        <br />
-        <label for="psw"><b></b></label>
-        <input type="password" placeholder="Salasana" name="psw" style="margin-left:250px;" required>
-        <br />
-        <label>
-            <input type="checkbox" name="muistaKäyttäjä" style="margin-left:250px;"> Muista käyttäjä
-        </label>
-        <br />
-        <button type="submit" style="margin-left:250px;">Kirjaudu</button>
-
-
-
-        <div class="container">
-
-            <span class="psw" style="margin-left:250px;"><a href="#">Salasana unohtunut?</a></span>
-        </div>
-        <br />
-        <label>
-            <input type="checkbox" name="Faceb" style="margin-left:250px;">Salli sovelluksen jakaa ilmoituksia Facebookissa
-        </label>
-        <br />
-        <label>
-            <input type="checkbox" name="Kamera" style="margin-left:250px;">Salli sovelluksen käyttää kameraa
-        </label>
-        <br />
-        <label>
-            <input type="checkbox" name="Sijainti" style="margin-left:250px;">Salli sovelluksen käyttää sijaintia
-        </label>
-    </div>
+    
