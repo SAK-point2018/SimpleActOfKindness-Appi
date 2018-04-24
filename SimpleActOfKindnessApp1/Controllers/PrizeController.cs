@@ -13,5 +13,9 @@ namespace SimpleActOfKindnessApp1.Controllers
         {
             return View();
         }
+        public ActionResult MainPage()
+        {
+            return View();
+        }
     }
 }
