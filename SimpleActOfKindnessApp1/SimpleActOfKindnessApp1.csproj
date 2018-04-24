@@ -146,7 +146,6 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\PrizeController.cs" />
-    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -195,7 +194,6 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\MainPage\MainPage.cshtml" />
     <Content Include="Views\MainPage\MainPageLayout.cshtml" />
-    <Content Include="Views\Profile\Profile.cshtml" />
     <Content Include="Views\Prize\Prize.cshtml" />
     <Content Include="Views\Login\LoginLayout.cshtml" />
   </ItemGroup>
