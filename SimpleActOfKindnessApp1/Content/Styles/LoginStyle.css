@@ -8,6 +8,9 @@ h1 {
     font-family:'Curlz MT';
     padding: 15px 30px;
 }
+#footer {
+    padding:30px;
+}
 #button {
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
