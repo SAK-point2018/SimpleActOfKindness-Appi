@@ -15,10 +15,10 @@ namespace SimpleActOfKindnessApp1.Controllers
             return View(); 
         }
 
-        // GET: MainPage/Prize
+        // GET: Views/Prize
         public ActionResult Prize()
         {
-            return RedirectToAction("Prize");
+            return RedirectToAction("Prize/Prize");
         }
     }
 }
