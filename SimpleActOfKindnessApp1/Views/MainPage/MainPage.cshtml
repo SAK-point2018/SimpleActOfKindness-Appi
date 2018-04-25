@@ -1,77 +1,63 @@
 ﻿@{
-    Layout = "~/Views/MainPage/MainPageLayout.cshtml";
+    Layout = "~/Views/Login/LoginLayout.cshtml";
 }
 
 @{
     ViewBag.Title = "MainPage";
 }
 
-<body>
-        <h1>Pääsivu</h1>
-        <div id="PrizeButton">
-            <nav>
-                <ul>
-                    <li>
+<h1>SIMPLY ACT OF KINDNESS</h1>
 
-                        <a href="~/Prize/Prize/">
-                            <input type="button" value="AUTOIN MUMMOA" />
-                        </a>
 
-                    </li>
-                    <li>
-                        <a href="~/Prize/Prize/">
-                            <input type="button" value="AVASIN OVEN TOISELLE" />
-                        </a>
-                    </li>
-                    <li>
-                        <button>
-                            <link href="~/Content/Styles/Button1.css" rel="stylesheet" type="text/css" />
-                            KERROIN KOHTELIAISUUDEN
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <link href="~/Content/Styles/Button1.css" rel="stylesheet" type="text/css" />
-                            SAIN TOISEN HYMYILEMÄÄN
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <link href="~/Content/Styles/Button1.css" rel="stylesheet" type="text/css" />
-                            AVASIN OVEN
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <link href="~/Content/Styles/Button1.css" rel="stylesheet" type="text/css" />>
-                            KUUNTELIN / JÄIN KESKUSTELEMAAN
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <link href="~/Content/Styles/Button1.css" rel="stylesheet" type="text/css" />
-                            TEIN LUMITYÖT TOISELLE
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <link href="~/Content/Styles/Button1.css" rel="stylesheet" type="text/css" />
-                            SIIVOSIN TOISEN SOTKUN
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <link href="~/Content/Styles/Button1.css" rel="stylesheet" type="text/css" />
-                            EI LÖYDY LISTALTA? KIRJOITA HYVÄ TEKOSI TÄHÄN!
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <link href="~/Content/Styles/Button1.css" rel="stylesheet" type="text/css" />
-                            OMAT TIEDOT
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-</body>
+<form action="action_page.php">
+    <ul>
+        <li>
+            <br />
+            <a href="~/Prize/Prize/">
+                <input class="btn btn-default" type="button" value="AUTOIN VANHUSTA" id="button" />
+            </a>
+        </li>
+        <li>
+            <br />
+            <a href="~/Prize/Prize/">
+                <input class="btn btn-default" type="button" value="SAIN TOISEN HYMYILEMÄÄN" id="button" />
+            </a>
+        </li>
+
+        <li>
+            <br />
+            <a href="~/Prize/Prize/">
+                <input class="btn btn-default" type="button" value="AVASIN OVEN" id="button" />
+            </a>
+        </li>
+        <li>
+            <br />
+            <a href="~/Prize/Prize/">
+                <input class="btn btn-default" type="button" value="KUUNTELIN / JÄIN KESKUSTELEMAAN" id="button" />
+            </a>
+        </li>
+        <li>
+            <br />
+            <a href="~/Prize/Prize/">
+                <input class="btn btn-default" type="button" value="TEIN LUMITYÖT TOISELLE" id="button" />
+            </a>
+        </li>
+        <li>
+            <br />
+            <a href="~/Prize/Prize/">
+                <input class="btn btn-default" type="button" value="SIIVOSIN TOISEN SOTKUN" id="button" />
+            </a>
+        </li>
+        <li>
+            <br />
+            <a href="~/Prize/Prize/">
+                <input class="btn btn-default" type="button" value="EI LÖYDY LISTALTA? KIRJOITA HYVÄ TEKOSI TÄHÄN!" id="button" />
+            </a>
+        </li>
+        <li>
+            <br />
+            <a href="~/Prize/Prize/">
+                <input class="btn btn-default" type="button" value="OMAT TIEDOT" id="button" />
+            </a>
+    </ul>
+</form>

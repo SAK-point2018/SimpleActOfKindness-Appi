@@ -1,36 +1,44 @@
-﻿h1 {
-    border-bottom: 3px solid #000000;
-    font: 2.75em/1.75em georgia, serif;
+﻿body {
+    background: linear-gradient(#116e65, #a7f1ea);
+    background-attachment: fixed;
+    align-content: center;
+    font-family: Calibri;
+}
+h1 {
+    font-family: 'Curlz MT';
+    padding: 15px 30px;
+}
+
+#footer {
+    padding: 30px;
+}
+
+#button {
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    border-radius: 28px;
+    font-family: Calibri;
     color: #000000;
+    font-size: 16px;
+    background: #a7f1ea;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
 }
 
-ul {
-    list-style-type: none;
+#button:hover {
+    background: #116e65;
+    background-image: -webkit-linear-gradient(top, #116e65, #a7f1ea);
+    background-image: -moz-linear-gradient(top, #116e65, #a7f1ea);
+
+    background-image: -o-linear-gradient(top, #116e65, #a7f1ea);
+    background-image: linear-gradient(to bottom, #116e65, #a7f1ea);
+    text-decoration: none;
+    }
+
+#kirjaudu {
+    padding: 30px;
 }
 
-body {
-    margin: 0;
-    padding: 1em;
-    background-color: lightcyan;
-    font: 75%/1.75em "Trebuchet MS", Verdana, sans-serif;
-    color: #000;
+#salli {
+    padding: 30px;
 }
-
-
-
-#list {
-    margin: 1em 0 7em -3em;
-    padding: 1em 0 0 0;
-    background-color: #ffffff;
-    color: #000;
-    width: 25%;
-    float: left;
-}
-
-#header, #footer {
-    margin: 0;
-    padding: 0;
-    color: #000;
-}
-
-

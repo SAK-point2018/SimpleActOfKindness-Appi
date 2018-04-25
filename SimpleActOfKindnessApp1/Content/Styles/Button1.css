@@ -6,6 +6,6 @@ a {
     text-decoration: dotted;
     font-family: Calibri;
     background: #c3d793;
-    display: block;
-    padding: 10px;
+    display: inline-block;
+    padding: 5px;
 }
