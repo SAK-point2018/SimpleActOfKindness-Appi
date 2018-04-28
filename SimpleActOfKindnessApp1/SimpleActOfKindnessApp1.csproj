@@ -146,6 +146,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MainPageController.cs" />
     <Compile Include="Controllers\PrizeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -157,6 +158,7 @@
     <Content Include="Content\Styles\Button1.css" />
     <Content Include="Content\Styles\LoginStyle.css" />
     <Content Include="Content\Styles\MainPageStyle.css" />
+    <Content Include="Content\Styles\ProfileStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -196,6 +198,8 @@
     <Content Include="Views\MainPage\MainPageLayout.cshtml" />
     <Content Include="Views\Prize\Prize.cshtml" />
     <Content Include="Views\Login\LoginLayout.cshtml" />
+    <Content Include="Views\Profile\ProfilePage.cshtml" />
+    <Content Include="Views\Profile\ProfilePageLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
