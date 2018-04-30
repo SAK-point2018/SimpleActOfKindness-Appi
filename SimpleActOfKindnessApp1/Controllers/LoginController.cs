@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 	
 
 namespace SimpleActOfKindnessApp1.Controllers
