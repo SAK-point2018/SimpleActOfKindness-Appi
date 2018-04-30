@@ -18,10 +18,16 @@ namespace SimpleActOfKindnessApp1.Controllers
             return View();
         }
 
-        //GET: Views/Profile
+        //GET: Views/ProfilePage
         public ActionResult ProfilePage()
         {
             return RedirectToAction("Profile/ProfilePage");
+        }
+
+        // GET: Views/MainPage
+        public ActionResult MainPage()
+        {
+            return RedirectToAction("MainPage/MainPage");
         }
     }
 }
