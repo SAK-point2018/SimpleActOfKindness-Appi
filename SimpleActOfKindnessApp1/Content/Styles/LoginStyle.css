@@ -23,6 +23,18 @@ h1 {
     text-decoration: none;
 }
 
+#button1 {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Calibri;
+    color: #000000;
+    font-size: 16px;
+    background: #1273ea;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+
 #button:hover {
     background: #116e65;
     background-image: -webkit-linear-gradient(top, #116e65, #a7f1ea);
