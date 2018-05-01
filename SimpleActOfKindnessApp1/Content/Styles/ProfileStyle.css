@@ -10,11 +10,18 @@ h1 {
     padding: 15px 30px;
 }
 
+h2 {
+    font-family: Calibri;
+    color: #000000;
+    font-size: 10px;
+    padding-left: 40px;
+}
+
 #footer {
     padding: 30px;
 }
 
-#button {
+.buttonX {
     -webkit-border-radius: 28px;
     -moz-border-radius: 28px;
     border-radius: 28px;
@@ -24,6 +31,21 @@ h1 {
     background: #a7f1ea;
     padding: 5px 10px 5px 10px;
     text-decoration: none;
+    width: 40%;
+}
+
+
+.button1 {
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    border-radius: 28px;
+    font-family: Calibri;
+    color: #000000;
+    font-size: 16px;
+    background: #a7f1ea;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    width: 350px;
 }
 
     #button:hover {
