@@ -19,18 +19,7 @@ namespace SimpleActOfKindnessApp1.Controllers
             return View();
         }
 
-        SqlConnection conn = new SqlConnection("Data Source=vsc");
-        SqlCommand command;
-        string imgLoc = "";
-        public form1()
-        {
-            InitializeComponent();
-        }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }
