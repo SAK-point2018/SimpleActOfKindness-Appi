@@ -11,29 +11,43 @@
 
 @* Kirjatuneen henkilön nimi + uloskirjautumisnappula *@
 
+
+<div class="input-group">
+    <input style="margin-left: 40px" type="text" class="form-group" placeholder="Matti Meikäläinen" aria-describedby="basic-addon2">
+    <span class="input-group-addon" id="buttonX">EXIT</span>
+</div>
+<br />
+
+
+
 @* Lunastamattomat palkinnot nappuloina, nappulassa palkinto + vanhemenisaika  *@
 
 <form action="action_page.php">
-
-    <a href="">
-        @* Linkitys Lunasta palkinto-sivulle puuttuu *@
-        <input class="buttonX" type="button" value="TEHTY TEKO1, Käytettävä 12.2.2019 mennessä" id="button" />
-    </a>
-
-    <br>
-    <br>
-    <a href="">
-        @* Linkitys Lunasta palkinto-sivulle puuttuu *@
-        <input class="buttonX" type="button" value="TEHTY TEKO2, Käytettävä 30.5.2018 mennessä" id="button" />
-    </a>
-    <br>
-    <br>
+    <ul>
+        <li>
+            <br />
+            <a href="">
+                @* Linkitys Lunasta palkinto-sivulle puuttuu *@
+                <input class="btn-default" type="button" value="TEHTY TEKO1, Käytettävä 12.2.2019 mennessä" id="button" />
+            </a>
+        </li>
+        <li>
+            <br />
+            <a href="">
+                @* Linkitys Lunasta palkinto-sivulle puuttuu *@
+                <input class="btn-default" type="button" value="TEHTY TEKO2, Käytettävä 30.5.2018 mennessä" id="button" />
+            </a>
+        </li>
+        <li>
+            <br />
+            @* Kirjaa uusi hyvä teko-nappula, linkitys MainPage-sivulle *@
+            <a href="~/MainPage/MainPage">
+                <input class="btn-default" type="button" value="KIRJAA UUSI TEKO" id="buttonX" />
+            </a>
+        </li>
+    </ul>
 </form>
-
-@* Kirjaa uusi hyvä teko-nappula, linkitys MainPage-sivulle *@
-<a href="~/MainPage/MainPage" class="buttonX" id="button"> Kirjaa uusi hyvä teko</a>
-
-<h2 style="padding-left: 20px"> Lunastetut hyvät työt</h2>
+<h2 style="font-size: 25px; padding-left: 20px"> Lunastetut hyvät työt</h2>
 
 @* Tehdyt hyvät työt -lista, teko + kirjauspvm *@
 <form action="action_page.php">
@@ -41,9 +55,9 @@
         <li> Siivosin toisen sotkun 20.12.2017 </li>
         <li> Avasin oven 2.2.2018 </li>
 
-            @* Lista lunastetuista teoista *@
+        @* Lista lunastetuista teoista *@
 
-        
+
 
     </ul>
 

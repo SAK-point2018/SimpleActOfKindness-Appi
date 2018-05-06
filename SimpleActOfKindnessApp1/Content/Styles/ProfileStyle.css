@@ -11,31 +11,36 @@ h1 {
 }
 
 h2 {
-    font-family: Calibri;
+    font-family: 'Curlz MT';
     color: #000000;
-    font-size: 10px;
-    padding-left: 40px;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+h3 {
+    font-family: Calibri;
+    margin-left: 40px;
 }
 
 #footer {
     padding: 30px;
 }
 
-.buttonX {
+#buttonX {
     -webkit-border-radius: 28px;
     -moz-border-radius: 28px;
     border-radius: 28px;
     font-family: Calibri;
     color: #000000;
     font-size: 16px;
-    background: #a7f1ea;
+    background: #1273ea;
     padding: 5px 10px 5px 10px;
     text-decoration: none;
-    width: 40%;
+   
 }
 
 
-.button1 {
+#button {
     -webkit-border-radius: 28px;
     -moz-border-radius: 28px;
     border-radius: 28px;
@@ -45,7 +50,7 @@ h2 {
     background: #a7f1ea;
     padding: 5px 10px 5px 10px;
     text-decoration: none;
-    width: 350px;
+  
 }
 
     #button:hover {
@@ -56,3 +61,10 @@ h2 {
         background-image: linear-gradient(to bottom, #116e65, #a7f1ea);
         text-decoration: none;
     }
+
+
+ul {
+    list-style-type: none;
+    /*margin: 0;
+    padding: 0;*/
+} 
