@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
-	
+
 
 namespace SimpleActOfKindnessApp1.Controllers
 {
@@ -29,18 +29,26 @@ namespace SimpleActOfKindnessApp1.Controllers
         {
             return RedirectToAction("MainPage/MainPage");
         }
-        protected void ButtonKirjaudu(object sender, EventArgs e)
-        {
-            //luodaan SQL-connection objekti
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ToString());
-            //avataan tietokantayhteys
-            conn.Open();
-            //luodaan Sql-kyselylauseen objektit
-            //string Ktunnus = sposti.Text;
-            //string Salas = psw.Text;
+        //protected void ButtonKirjaudu(object sender, EventArgs e)
+        //{
+        //    //luodaan SQL-connection objekti
+        //    SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ToString());
+        //    //avataan tietokantayhteys
+        //    conn.Open();
+        //    //luodaan Sql-kyselylauseen objektit
+        //    //string Ktunnus = sposti.Text;
+        //    //string Salas = psw.Text;
 
-            //luodaan sql-kyselylause
-           // string sql = "SELECT*FROM SAKkayttaja WHERE Kayttajatunnus='" + Ktunnus + "' AND Salasana='" + Salas + "'";
-        }
+        //    //luodaan sql-kyselylause
+        //   // string sql = "SELECT*FROM SAKkayttaja WHERE Kayttajatunnus='" + Ktunnus + "' AND Salasana='" + Salas + "'";
+        //}
+
+
+        ////entiteetin avulla tietokantakysely
+        //protected void ButtonKirjaudu(object sender, EventArgs e)
+        //{
+        //    SAKEntities entities = new SAKEntities();
+
+        //}
     }
 }
