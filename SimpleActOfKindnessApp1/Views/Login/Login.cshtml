@@ -11,10 +11,10 @@
 <form action="action_page.php">
     <div id="kirjaudu">
         <label for="sposti"><b></b></label>
-        <input type="text" placeholder="Sähköpostiosoite" name="sposti" required>
+        <input type="text" id="sposti" placeholder="Sähköpostiosoite" name="sposti" required>
         <br />
         <label for="psw"><b></b></label>
-        <input type="password" placeholder="Salasana" name="psw" required>
+        <input type="password" id="psw" placeholder="Salasana" name="psw" required>
         <br />
         <label>
             <input type="checkbox" name="muistaKäyttäjä">
@@ -23,9 +23,10 @@
         <br />
         <br />
 
-        <a href="~/MainPage/MainPage" id="button">
-            Kirjaudu sisään
-        </a>
+        
+
+        <button id="button" onclick="ButtonKirjaudu">Kirjaudu sisään</button>
+            
         <br />
         <br />
         <span class="psw">
