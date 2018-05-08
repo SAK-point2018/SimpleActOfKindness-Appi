@@ -158,6 +158,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Pictures.aspx.cs">
+      <DependentUpon>Pictures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Models\Pictures.aspx.designer.cs">
+      <DependentUpon>Pictures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pictures2.aspx.cs">
+      <DependentUpon>Pictures2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Models\Pictures2.aspx.designer.cs">
+      <DependentUpon>Pictures2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\SAKkayttaja.cs">
       <DependentUpon>SAKModel.tt</DependentUpon>
     </Compile>
@@ -201,6 +215,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Pictures.aspx" />
+    <Content Include="Models\Pictures2.aspx" />
     <Content Include="Models\SAKModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SAKModel.Context.cs</LastGenOutput>
