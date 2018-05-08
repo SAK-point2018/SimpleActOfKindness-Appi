@@ -48,7 +48,7 @@ h3 {
     color: #000000;
     font-size: 16px;
     background: #a7f1ea;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 20px 5px 10px;
     text-decoration: none;
   
 }
@@ -67,4 +67,8 @@ ul {
     list-style-type: none;
     /*margin: 0;
     padding: 0;*/
-} 
+}
+
+.inline {
+    display: inline;
+}
