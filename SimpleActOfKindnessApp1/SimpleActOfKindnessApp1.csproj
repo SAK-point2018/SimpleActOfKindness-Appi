@@ -47,10 +47,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -173,7 +173,7 @@
       <DependentUpon>Pictures2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKkayttaja.cs">
-      <DependentUpon>SAKModel.tt</DependentUpon>
+      <DependentUpon>SQLSAK.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -191,16 +191,34 @@
       <DependentUpon>SAKModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKpalkinnontarjoaja.cs">
-      <DependentUpon>SAKModel.tt</DependentUpon>
+      <DependentUpon>SQLSAK.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKpalkinto.cs">
-      <DependentUpon>SAKModel.tt</DependentUpon>
+      <DependentUpon>SQLSAK.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKtehdytteot.cs">
-      <DependentUpon>SAKModel.tt</DependentUpon>
+      <DependentUpon>SQLSAK.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKteot.cs">
-      <DependentUpon>SAKModel.tt</DependentUpon>
+      <DependentUpon>SQLSAK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SQLSAK.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQLSAK.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SQLSAK.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQLSAK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SQLSAK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQLSAK.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblImage.cs">
+      <DependentUpon>SQLSAK.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -227,6 +245,16 @@
       <DependentUpon>SAKModel.edmx</DependentUpon>
       <LastGenOutput>SAKModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\SQLSAK.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SQLSAK.edmx</DependentUpon>
+      <LastGenOutput>SQLSAK.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SQLSAK.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SQLSAK.edmx</DependentUpon>
+      <LastGenOutput>SQLSAK.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -238,6 +266,13 @@
     </EntityDeploy>
     <Content Include="Models\SAKModel.edmx.diagram">
       <DependentUpon>SAKModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\SQLSAK.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SQLSAK.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SQLSAK.edmx.diagram">
+      <DependentUpon>SQLSAK.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

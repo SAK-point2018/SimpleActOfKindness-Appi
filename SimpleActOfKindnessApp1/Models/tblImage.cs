@@ -12,12 +12,11 @@ namespace SimpleActOfKindnessApp1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SAKpalkinto
+    public partial class tblImage
     {
-        public int PalkintoID { get; set; }
-        public string PalkintoNimi { get; set; }
-        public int PalkinnonTarjoajaID { get; set; }
-        public byte[] PalkintoKuva { get; set; }
-        public Nullable<int> KuvanKoko { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> Size { get; set; }
+        public byte[] ImageData { get; set; }
     }
 }
