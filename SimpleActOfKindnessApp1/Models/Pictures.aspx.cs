@@ -36,7 +36,7 @@ namespace SimpleActOfKindnessApp1.Models
                 BinaryReader binaryReader = new BinaryReader(stream);
                 byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
 
-                string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                string cs = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(cs))
                 {
                     SqlCommand cmd = new SqlCommand("spUploadImage", con);
@@ -69,7 +69,7 @@ namespace SimpleActOfKindnessApp1.Models
                         Value = -1,
                         Direction = ParameterDirection.Output
                     };
-                    cmd.Parameters.Add(paramImageData);
+                    cmd.Parameters.Add(paramNewId);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
