@@ -1,63 +1,40 @@
-﻿@{
+﻿@*@{
     Layout = "~/Views/Login/LoginLayout.cshtml";
-}
+}*@
 
 @{
     ViewBag.Title = "MainPage";
 }
 
 <h1>SIMPLY ACT OF KINDNESS</h1>
+@section scripts {
+
+    <script type="text/javascript">
+        $(function () {
+            $.getJSON("/mainpage/getlist", null, function (json) {
+                var hyvatTeot = JSON.parse(json);
+                alert("tekojen lkm: " + hyvatTeot.length);
+
+                var html = "";
+
+                for (var index = 0; index < hyvatTeot.length; index++) {
+                    html +=
+                        "<li>" +
+                        "<a href='~/Prize/Prize/'>" +
+                        "<input class='btn btn-default' type='button' value=" + hyvatTeot[index].TeonNimi + "id='button' />" +
+                        "</a>" +
+                        "</li>"
+                }
+
+                $("#hyvaTekoList p").html(html);
 
 
-<form action="action_page.php">
-    <ul>
-        <li>
-            <br />
-            <a href="~/Prize/Prize/">
-                <input class="btn btn-default" type="button" value="AUTOIN VANHUSTA" id="button" />
-            </a>
-        </li>
-        <li>
-            <br />
-            <a href="~/Prize/Prize/">
-                <input class="btn btn-default" type="button" value="SAIN TOISEN HYMYILEMÄÄN" id="button" />
-            </a>
-        </li>
+            });
+        });
+    </script>
+}
+<div style="background-color:white" id=hyvaTekoList>
+    <p>
+    </p>
+</div>
 
-        <li>
-            <br />
-            <a href="~/Prize/Prize/">
-                <input class="btn btn-default" type="button" value="AVASIN OVEN" id="button" />
-            </a>
-        </li>
-        <li>
-            <br />
-            <a href="~/Prize/Prize/">
-                <input class="btn btn-default" type="button" value="KUUNTELIN / JÄIN KESKUSTELEMAAN" id="button" />
-            </a>
-        </li>
-        <li>
-            <br />
-            <a href="~/Prize/Prize/">
-                <input class="btn btn-default" type="button" value="TEIN LUMITYÖT TOISELLE" id="button" />
-            </a>
-        </li>
-        <li>
-            <br />
-            <a href="~/Prize/Prize/">
-                <input class="btn btn-default" type="button" value="SIIVOSIN TOISEN SOTKUN" id="button" />
-            </a>
-        </li>
-        <li>
-            <br />
-            <a href="~/Prize/Prize/">
-                <input class="btn btn-default" type="button" value="EI LÖYDY LISTALTA? KIRJOITA HYVÄ TEKOSI TÄHÄN!" id="button" />
-            </a>
-        </li>
-        <li>
-            <br />
-            <a href="~/Profile/ProfilePage">
-                <input class="btn btn-default" type="button" value="OMAT TIEDOT" id="button1" />
-            </a>
-    </ul>
-</form>

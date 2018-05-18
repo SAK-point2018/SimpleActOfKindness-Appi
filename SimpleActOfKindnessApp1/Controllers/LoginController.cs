@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
-
+using SimpleActOfKindnessApp1.Models;
 
 namespace SimpleActOfKindnessApp1.Controllers
 {
@@ -44,11 +44,15 @@ namespace SimpleActOfKindnessApp1.Controllers
         //}
 
 
-        ////entiteetin avulla tietokantakysely
-        //protected void ButtonKirjaudu(object sender, EventArgs e)
-        //{
-        //    SAKEntities entities = new SAKEntities();
+        //entiteetin avulla tietokantakysely
+        protected void ButtonKirjaudu(object sender, EventArgs e)
+        {
+            SAKEntities entities = new SAKEntities();
+            //luodaan Sql-kyselylauseen objektit
+            //string Ktunnus = sposti.Text;
+            //string Salas = psw.Text;
 
-        //}
+            entities.Dispose(); //muistin vapautus
+        }
     }
 }
