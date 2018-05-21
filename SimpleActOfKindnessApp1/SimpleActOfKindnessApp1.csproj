@@ -335,7 +335,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\MainPage\MainPage.cshtml" />
+    <Content Include="Views\MainPage\Index.cshtml" />
     <Content Include="Views\MainPage\MainPageLayout.cshtml" />
     <Content Include="Views\Prize\Prize.cshtml" />
     <Content Include="Views\Login\LoginLayout.cshtml" />

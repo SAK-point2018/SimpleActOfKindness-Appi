@@ -12,7 +12,7 @@ namespace SimpleActOfKindnessApp1.Controllers
     public class MainPageController : Controller
     {
         // GET: MainPage
-        public ActionResult MainPage()
+        public ActionResult Index()
         {
             return View(); 
         }
@@ -24,7 +24,7 @@ namespace SimpleActOfKindnessApp1.Controllers
         }
         public JsonResult getlist()
         {
-            SAKEntities entities = new SAKEntities();
+            ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
 
             var model = (from t in entities.SAKteot
                          select new

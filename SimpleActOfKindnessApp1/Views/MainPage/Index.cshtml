@@ -13,15 +13,17 @@
         $(function () {
             $.getJSON("/mainpage/getlist", null, function (json) {
                 var hyvatTeot = JSON.parse(json);
-                alert("tekojen lkm: " + hyvatTeot.length);
+                //alert("tekojen lkm: " + hyvatTeot.length);
 
                 var html = "";
 
                 for (var index = 0; index < hyvatTeot.length; index++) {
+                    //alert("arvo on: " + hyvatTeot[index].TeonNimi);
                     html +=
                         "<li>" +
-                        "<a href='~/Prize/Prize/'>" +
-                        "<input class='btn btn-default' type='button' value=" + hyvatTeot[index].TeonNimi + "id='button' />" +
+                        //"<a href='~/Prize/Prize/'>" +
+                        "<a href='http://www.yle.fi'>" +
+                        "<input class='btn btn-default' type='button' value=" + hyvatTeot[index].TeonNimi + " id='button'/>" +
                         "</a>" +
                         "</li>"
                 }

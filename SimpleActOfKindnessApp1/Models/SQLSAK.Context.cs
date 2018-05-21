@@ -25,11 +25,11 @@ namespace SimpleActOfKindnessApp1.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<SAKkayttaja> SAKkayttajas { get; set; }
-        public virtual DbSet<SAKpalkinnontarjoaja> SAKpalkinnontarjoajas { get; set; }
-        public virtual DbSet<SAKpalkinto> SAKpalkintoes { get; set; }
-        public virtual DbSet<SAKtehdytteot> SAKtehdytteots { get; set; }
-        public virtual DbSet<SAKteot> SAKteots { get; set; }
-        public virtual DbSet<tblImage> tblImages { get; set; }
+        public virtual DbSet<SAKkayttaja> SAKkayttaja { get; set; }
+        public virtual DbSet<SAKpalkinnontarjoaja> SAKpalkinnontarjoaja { get; set; }
+        public virtual DbSet<SAKpalkinto> SAKpalkinto { get; set; }
+        public virtual DbSet<SAKtehdytteot> SAKtehdytteot { get; set; }
+        public virtual DbSet<SAKteot> SAKteot { get; set; }
+        public virtual DbSet<tblImage> tblImage { get; set; }
     }
 }
