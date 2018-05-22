@@ -1,6 +1,6 @@
-﻿@{
+﻿@*@{
     Layout = "~/Views/Profile/ProfilePageLayout.cshtml";
-}
+}*@
 
 @{
     ViewBag.Title = "ProfilePage";
@@ -59,15 +59,40 @@
 <h2 style="font-size: 25px; padding-left: 20px"> Lunastetut hyvät työt</h2>
 
 @* Tehdyt hyvät työt -lista, teko + kirjauspvm *@
-<form action="action_page.php">
-    <ul>
+@*<form action="action_page.php">*@
+    @*<ul>
         <li> Siivosin toisen sotkun 20.12.2017 </li>
-        <li> Avasin oven 2.2.2018 </li>
+        <li> Avasin oven 2.2.2018 </li>*@
 
         @* Lista lunastetuista teoista *@
 
 
 
-    </ul>
+    @*</ul>*@
 
-</form>
+@*</form>*@
+
+@*tehtyjen tekojen listaaminen tietokannasta*@
+@section scripts {
+
+    <script type="text/javascript">
+        $(function () {
+            $.getJSON("/Profile/Tehdytteotlista", null, function (json) {
+                var tehdytTeot = JSON.parse(json);
+                alert("tehdyt teot: " + tehdytTeot.length);
+
+                var html = "";
+
+                for (var index = 0; index < tehdytTeot.length; index++) {
+                    alert("arvo on: " + tehdytTeot[index].Tekopvm);
+                    html +=
+                        "<li>" +
+                        "<input type='datetime-local' value=" + tehdytTeot.Tekopvm + "/>" +
+                        "</li>"
+                }
+                $().html(html);
+          });      
+        });
+    </script>
+    }
+@*<input type="datetime-local"*@
