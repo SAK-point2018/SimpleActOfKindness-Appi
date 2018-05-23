@@ -1,14 +1,12 @@
-﻿@*@{
-    Layout = "~/Views/Login/LoginLayout.cshtml";
-}*@
+﻿
+@{ ViewBag.Title = "MainPage";}
 
-@{
-    ViewBag.Title = "MainPage";
-}
+@*@{Layout = "~/Views/Login/LoginLayout.cshtml"; }*@
 
 <h1>SIMPLY ACT OF KINDNESS</h1>
-@section scripts {
 
+@section scripts {
+    <link href="@Url.Content("~/Content/Styles/LoginStyle.css")" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         $(function () {
             $.getJSON("/mainpage/getlist", null, function (json) {
@@ -18,25 +16,20 @@
                 var html = "";
 
                 for (var index = 0; index < hyvatTeot.length; index++) {
-                    alert("arvo on: " + hyvatTeot[index].TeonNimi);
+
                     html +=
                         "<li>" +
-                        //"<a href='~/Prize/Prize/'>" +
-                        "<a href='http://www.yle.fi'>" +
+                        <link href="@Url.Content("~/Views/Prize/Prize.cshtml")" /> +
                         "<input class='btn btn-default' type='button' value=" + hyvatTeot[index].TeonNimi + " id='button'/>" +
                         "</a>" +
                         "</li>"
                 }
-
                 $("#hyvaTekoList p").html(html);
-
-
             });
         });
     </script>
 }
-<div style="background-color:white" id=hyvaTekoList>
+<div style="background-color:#116e65, #a7f1ea" id=hyvaTekoList>
     <p>
     </p>
 </div>
-
