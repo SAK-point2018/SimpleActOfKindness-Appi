@@ -87,9 +87,9 @@
                 for (var index = 0; index < tehdytTeot.length; index++) {
                     //alert("arvo on: " + tehdytTeot[index].Tekopvm);
                     html +=
-                        "<li>" +
-                        "<input class='list-group' value=" + tehdytTeot[index].Tekopvm + "/>" +
-                        "</li>"
+                        "<ul class='list-group'>" +
+                        "<input class='list-group-item' value=" + tehdytTeot[index].Tekopvm + tehdytTeot[index].TeonNimi + "/>" +
+                        "</ul>"
                 }
                 $('#tehtyTekoList').html(html);
             });

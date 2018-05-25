@@ -22,14 +22,18 @@ namespace SimpleActOfKindnessApp1.Controllers
             //tietokantahaku
             ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
 
-            var tehtyteko = (from tt in entities.SAKtehdytteot 
-                             select new
-                             {
-                                 Tekopvm = tt.Tekopvm,
+            //SAKteot- ja SAKtehdytteot-taulujen liitos InnerJoinilla
+            //(TeonNimi täytyy hakea SAKteot-taulusta)
+            var innerJoinQuery = (from tehtyteko in entities.SAKtehdytteot join
+                                  teot in entities.SAKteot on tehtyteko.TekoID equals teot.TekoID
+                                  select new
+                                     {
+                                         Tekopvm = tehtyteko.Tekopvm,
+                                         TeonNimi = teot.TeonNimi
 
-                             }).ToList();
+                                     }).ToList();
 
-            string json = JsonConvert.SerializeObject(tehtyteko); //objekti JSON-muotoon
+            string json = JsonConvert.SerializeObject(innerJoinQuery); //objekti JSON-muotoon
             entities.Dispose(); //muistin vapautus
 
             //välimuistin hallinta

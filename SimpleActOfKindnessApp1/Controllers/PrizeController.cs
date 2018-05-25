@@ -18,7 +18,6 @@ namespace SimpleActOfKindnessApp1.Controllers
         {
             return View();
         }
-       
     }
 
 }
