@@ -31,31 +31,25 @@
 
 @* Lunastamattomat palkinnot nappuloina, nappulassa palkinto + vanhemenisaika  *@
 
-<form action="action_page.php">
-    <ul>
-        <li>
-            <br />
-            <a href="">
-                @* Linkitys Lunasta palkinto-sivulle puuttuu *@
-                <input class="btn-default" type="button" value="Hesburger 2 Kerrosateriaa 1 hinnalla, Käytettävä 12.2.2019 mennessä" id="button" />
-            </a>
-        </li>
-        <li>
-            <br />
-            <a href="">
-                @* Linkitys Lunasta palkinto-sivulle puuttuu *@
-                <input class="btn-default" type="button" value="HM 20% alennus, Käytettävä 30.5.2018 mennessä" id="button" />
-            </a>
-        </li>
-        <li>
-            <br />
-            @* Kirjaa uusi hyvä teko-nappula, linkitys MainPage-sivulle *@
-            <a href="~/MainPage/MainPage">
-                <input class="btn-default" type="button" value="KIRJAA UUSI TEKO" id="buttonX" />
-            </a>
-        </li>
-    </ul>
-</form>
+
+<script type="text/javascript">
+    $(function () {
+        $.getJSON("/profile/LunastamattomatPalkinnot", null, function (json) {
+            var lunastamattomat = JSON.parse(json);
+
+            var html = "";
+
+            for (var index = 0; index < lunastamattomat.length; index++) {
+                html +=
+                    "<li>" +
+                    "<input class='list-group' value=" + lunastamattomat[index].PalkintoNimi + lunastamattomat[index].VoimassaOloPvm "/>" +
+                        "</li>"
+            }
+            $('#lunastamattomat').html(html);
+        });
+    });
+</script>
+
 <h2 style="font-size: 25px; padding-left: 20px"> Lunastetut hyvät työt</h2>
 
 @* Tehdyt hyvät työt -lista, teko + kirjauspvm *@

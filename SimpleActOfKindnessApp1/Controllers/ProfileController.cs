@@ -43,5 +43,27 @@ namespace SimpleActOfKindnessApp1.Controllers
             return Json(json, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult Lunastamattomatpalkinnot()
+        {
+            ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+
+            var lunastamattomat = (from l in entities.SAKtehdytteot
+                                   select new
+                                   {
+                                       //palkintonimi = l.palkintonimi,
+                                       voimassaolopvm = l.VoimassaOloPvm
+                                   }).ToList();
+
+            string json = JsonConvert.SerializeObject(lunastamattomat);
+            entities.Dispose();
+
+            Response.Expires = -1;
+            Response.CacheControl = "no-cache";
+
+            return Json(json, JsonRequestBehavior.AllowGet);
+
+
+        }
+
     }
 }
