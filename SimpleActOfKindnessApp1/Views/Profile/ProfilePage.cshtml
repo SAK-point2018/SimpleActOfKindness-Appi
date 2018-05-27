@@ -1,5 +1,5 @@
 ﻿@*@{
-        Layout = "~/Views/Profile/ProfilePageLayout.cshtml";
+        Layout = "~/Views//Login/LoginLayout.cshtml";
     }*@
 
 @{
@@ -25,44 +25,40 @@
 
 
 
-
-
-
-
 @* Lunastamattomat palkinnot nappuloina, nappulassa palkinto + vanhemenisaika  *@
-
-
-<script type="text/javascript">
-    $(function () {
-        $.getJSON("/Profile/Lunastamattomatpalkinnot", null, function (json) {
-            var lunastamattomat = JSON.parse(json);
-            alert("lunastamattomat: " + lunastamattomat.length);
-            var html = "";
-
-            for (var index = 0; index < lunastamattomat.length; index++) {
-                alert("arvo on: " + lunastamattomat[index].VoimassaOloPvm);
-                html +=
-                    "<ul class='list-group'>" +
-                    "<input class='list-group-item' value=" + lunastamattomat[index].palkintonimi + lunastamattomat[index].VoimassaOloPvm + "/>" +
-                    "</ul>"
-            }
-            $('#lunastamattomatList').html(html);
-        });
-    });
-</script>
-<div style="background-color:blueviolet" id=lunastamattomatList>
-    <p>
-    </p>
-</div>
-
-<h2 style="font-size: 25px; padding-left: 20px"> Lunastetut hyvät työt</h2>
-
-@* Tehdyt hyvät työt -lista, teko + kirjauspvm *@
-
-
-@*tehtyjen tekojen listaaminen tietokannasta*@
-@*JavaScriptillä JSON-kutsu palvelimelle*@
 @section scripts {
+<link href="~/Content/Styles/LoginStyle.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $.getJSON("/Profile/Lunastamattomatpalkinnot", null, function (json) {
+                var lunastamattomat = JSON.parse(json);
+
+                var html = "";
+
+                for (var index = 0; index < lunastamattomat.length; index++) {
+                    html +=
+                        "<ul class='list-group'>" +
+                        "<input class='list-group-item' value=" + lunastamattomat[index].palkintonimi + lunastamattomat[index].voimassaolopvm + "/>" +
+                        "</ul>"
+                }
+                $('#button').html(html);
+            });
+        });
+    </script>
+
+    <div id=button>
+        <p>
+        </p>
+    </div>
+
+    <h2 style="font-size: 25px; padding-left: 20px"> Lunastetut hyvät työt</h2>
+
+    @* Tehdyt hyvät työt -lista, teko + kirjauspvm *@
+
+
+    @*tehtyjen tekojen listaaminen tietokannasta*@
+    @*JavaScriptillä JSON-kutsu palvelimelle*@
+
 
     <script type="text/javascript">
         $(function () {
