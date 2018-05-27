@@ -47,11 +47,12 @@ namespace SimpleActOfKindnessApp1.Controllers
         {
             ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
 
-            var lunastamattomat = (from l in entities.SAKtehdytteot
+            var lunastamattomat = (from lun in entities.SAKtehdytteot join
+                                   palkinto in entities.SAKpalkinto on lun.PalkintoID equals palkinto.PalkintoID
                                    select new
                                    {
-                                       //palkintonimi = l.palkintonimi,
-                                       voimassaolopvm = l.VoimassaOloPvm
+                                       palkintonimi = palkinto.PalkintoID,
+                                       voimassaolopvm = lun.VoimassaOloPvm
                                    }).ToList();
 
             string json = JsonConvert.SerializeObject(lunastamattomat);

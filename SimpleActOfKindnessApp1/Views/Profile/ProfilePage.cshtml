@@ -34,37 +34,31 @@
 
 <script type="text/javascript">
     $(function () {
-        $.getJSON("/profile/LunastamattomatPalkinnot", null, function (json) {
+        $.getJSON("/Profile/Lunastamattomatpalkinnot", null, function (json) {
             var lunastamattomat = JSON.parse(json);
-
+            alert("lunastamattomat: " + lunastamattomat.length);
             var html = "";
 
             for (var index = 0; index < lunastamattomat.length; index++) {
+                alert("arvo on: " + lunastamattomat[index].VoimassaOloPvm);
                 html +=
-                    "<li>" +
-                    "<input class='list-group' value=" + lunastamattomat[index].PalkintoNimi + lunastamattomat[index].VoimassaOloPvm "/>" +
-                        "</li>"
+                    "<ul class='list-group'>" +
+                    "<input class='list-group-item' value=" + lunastamattomat[index].palkintonimi + lunastamattomat[index].VoimassaOloPvm + "/>" +
+                    "</ul>"
             }
-            $('#lunastamattomat').html(html);
+            $('#lunastamattomatList').html(html);
         });
     });
 </script>
+<div style="background-color:blueviolet" id=lunastamattomatList>
+    <p>
+    </p>
+</div>
 
 <h2 style="font-size: 25px; padding-left: 20px"> Lunastetut hyvät työt</h2>
 
 @* Tehdyt hyvät työt -lista, teko + kirjauspvm *@
-@*<form action="action_page.php">*@
-@*<ul>
-    <li> Siivosin toisen sotkun 20.12.2017 </li>
-    <li> Avasin oven 2.2.2018 </li>*@
 
-@* Lista lunastetuista teoista *@
-
-
-
-@*</ul>*@
-
-@*</form>*@
 
 @*tehtyjen tekojen listaaminen tietokannasta*@
 @*JavaScriptillä JSON-kutsu palvelimelle*@
