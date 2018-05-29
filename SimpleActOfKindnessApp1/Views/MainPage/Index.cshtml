@@ -6,7 +6,7 @@
 <h1>SIMPLY ACT OF KINDNESS</h1>
 
 @section scripts {
-    <link href="@Url.Content("~/Content/Styles/LoginStyle.css")" rel="stylesheet" type="text/css" />
+<link href="~/Content/Styles/LoginStyle.css" rel="stylesheet" />
     <script type="text/javascript">
         $(function () {
             $.getJSON("/mainpage/getlist", null, function (json) {
@@ -19,7 +19,7 @@
 
                     html +=
                         "<li>" +
-                        <link href="@Url.Content("~/Views/Prize/Prize.cshtml")" /> +
+                        "<a href='~/Prize/Index'/> " +
                         "<input class='btn btn-default' type='button' value=" + hyvatTeot[index].TeonNimi + " id='button'/>" +
                         "</a>" +
                         "</li>"
