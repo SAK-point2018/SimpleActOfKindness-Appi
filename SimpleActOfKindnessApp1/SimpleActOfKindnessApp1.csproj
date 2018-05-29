@@ -337,7 +337,7 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\MainPage\Index.cshtml" />
     <Content Include="Views\MainPage\MainPageLayout.cshtml" />
-    <Content Include="Views\Prize\Prize.cshtml" />
+    <Content Include="Views\Prize\Index.cshtml" />
     <Content Include="Views\Login\LoginLayout.cshtml" />
     <Content Include="Views\Profile\ProfilePage.cshtml" />
     <Content Include="Views\Profile\ProfilePageLayout.cshtml" />

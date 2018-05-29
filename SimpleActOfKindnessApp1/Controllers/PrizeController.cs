@@ -10,7 +10,7 @@ namespace SimpleActOfKindnessApp1.Controllers
     public class PrizeController : Controller
     {
         // GET: Prize
-        public ActionResult Prize()
+        public ActionResult Index()
         {
             return View();
         }

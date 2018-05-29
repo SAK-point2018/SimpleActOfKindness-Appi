@@ -1,19 +1,8 @@
-﻿@*@{
-        Layout = "~/Views//Login/LoginLayout.cshtml";
-    }*@
-
-@{
+﻿@{
     ViewBag.Title = "ProfilePage";
 }
-
 <h1>SIMPLY ACT OF KINDNESS</h1>
-
-
 @* Kirjatuneen henkilön nimi + uloskirjautumisnappula *@
-
-
-
-
 <h3>
     Matti Meikäläinen
     <small>
@@ -23,11 +12,9 @@
     </small>
 </h3>
 
-
-
 @* Lunastamattomat palkinnot nappuloina, nappulassa palkinto + vanhemenisaika  *@
 @section scripts {
-<link href="~/Content/Styles/LoginStyle.css" rel="stylesheet" />
+    <link href="~/Content/Styles/LoginStyle.css" rel="stylesheet" />
     <script type="text/javascript">
         $(function () {
             $.getJSON("/Profile/Lunastamattomatpalkinnot", null, function (json) {
@@ -55,11 +42,7 @@
 
     @* Tehdyt hyvät työt -lista, teko + kirjauspvm *@
 
-
-    @*tehtyjen tekojen listaaminen tietokannasta*@
-    @*JavaScriptillä JSON-kutsu palvelimelle*@
-
-
+    @*tehtyjen tekojen listaaminen tietokannasta JavaScriptillä JSON-kutsu palvelimelle*@
     <script type="text/javascript">
         $(function () {
             $.getJSON("/Profile/Tehdytteotlista", null, function (json) {
@@ -71,16 +54,25 @@
                 for (var index = 0; index < tehdytTeot.length; index++) {
                     //alert("arvo on: " + tehdytTeot[index].Tekopvm);
                     html +=
-                        "<ul class='list-group'>" +
-                        "<input class='list-group-item' value=" + tehdytTeot[index].Tekopvm + tehdytTeot[index].TeonNimi + "/>" +
-                        "</ul>"
+                        "<tr>" +
+                    "<td>" + tehdytTeot[index].TeonNimi + "</td>" +
+                        "<td>" + tehdytTeot[index].Tekopvm + "</td>" +
+                        "</tr>\r\n";
+                    //    "<ul class='list-group'>" +
+                    //    "<input class='list-group-item' value=" + tehdytTeot[index].TeonNimi + tehdytTeot[index].Tekopvm + "/>" +
+                    //"</ul>"
                 }
-                $('#tehtyTekoList').html(html);
+                $('#tehtyTekoTaulukko').html(html);
             });
         });
     </script>
 }
-<div style="background-color:white" id=tehtyTekoList>
-    <p>
-    </p>
+<div>
+    <table id="tehtyTekoTaulukko">
+        <tbody></tbody>
+    </table>
 </div>
+<div id=tehtytekolist style="width:auto;">
+        <ul>
+        </ul>
+    </div>
