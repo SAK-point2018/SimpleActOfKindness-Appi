@@ -47,26 +47,45 @@ namespace SimpleActOfKindnessApp1.Controllers
             return View(model);
         }
     
-        public ActionResult getsingleprize()
+        public ActionResult ShowSinglePrize(string id)
         {
-            ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
-            var model = (from tt in entities.SAKtehdytteot
-                         where tt.PalkintoID == 102
-                         select new
-                         {
-                             TehdytTeotID = tt.TehdytTeotID,
-                             KayttajaID = tt.KayttajaID,
-                             Tekopvm = tt.Tekopvm,
-                             PalkintoID = tt.PalkintoID,
-                             VoimassaOloPvm = tt.VoimassaOloPvm,
-                             TekoID = tt.TekoID
-                         }).ToList();
+            try
+            {
+                int ipalkintoID = int.Parse(id);
+                ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+                var model = (from tt in entities.SAKtehdytteot
+                             where tt.PalkintoID == ipalkintoID
+                             select new
+                             {
+                                 TehdytTeotID = tt.TehdytTeotID,
+                                 KayttajaID = tt.KayttajaID,
+                                 Tekopvm = tt.Tekopvm,
+                                 PalkintoID = tt.PalkintoID,
+                                 VoimassaOloPvm = tt.VoimassaOloPvm,
+                                 TekoID = tt.TekoID
+                             }).FirstOrDefault();
 
-            //string json = JsonConvert.SerializeObject(model);
-            entities.Dispose();
+                ViewBag.TehdytTeotID = model.TehdytTeotID;
+                ViewBag.KayttajaID = model.KayttajaID;
+                ViewBag.Tekopvm = model.Tekopvm;
+                ViewBag.PalkintoID = model.PalkintoID;
+                ViewBag.VoimassaOloPvm = model.VoimassaOloPvm;
+                ViewBag.TekoID = model.TekoID;
 
+                ViewBag.DBMessage = "Tietokantahaku onnistui!";
+                //string json = JsonConvert.SerializeObject(model);
+                entities.Dispose();
+
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.DBMessage = ex.GetType() + ": " + ex.Message;
+                return View();
+            }
+            
             //return Json(json, JsonRequestBehavior.AllowGet);
-            return View(model);
+
         }
 
     }
