@@ -23,9 +23,13 @@
                 var html = "";
 
                 for (var index = 0; index < lunastamattomat.length; index++) {
+                    //alert(lunastamattomat[index].voimassaolopvm);
+                    var nappulateksti = lunastamattomat[index].palkintonimi + " " + lunastamattomat[index].voimassaolopvm;
+                    var palkintoID = lunastamattomat[index].palkintoID;
+                    //alert(nappulateksti);
                     html +=
                         "<li>" +
-                        "<input class='btn btn-default' style='width: 250px;' type='button' value=" + lunastamattomat[index].palkintonimi + lunastamattomat[index].voimassaolopvm + " id='button'/>" +
+                        "<a href='/lunastus/getsingleprize'" + palkintoID + " class='btn btn-default'>" + nappulateksti + "</a>" +
                         "</li>"
                 }
                 $('#lunastamattomatpalkinnot p').html(html);

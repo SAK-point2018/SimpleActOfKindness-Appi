@@ -29,7 +29,8 @@ namespace SimpleActOfKindnessApp1.Controllers
                                    select new
                                    {
                                        palkintonimi = palkinto.PalkintoNimi,
-                                       voimassaolopvm = lun.VoimassaOloPvm
+                                       voimassaolopvm = lun.VoimassaOloPvm,
+                                       palkintoID = lun.PalkintoID
 
                                    }).ToList();
 
@@ -40,7 +41,11 @@ namespace SimpleActOfKindnessApp1.Controllers
             Response.CacheControl = "no-cache";
 
             return Json(json, JsonRequestBehavior.AllowGet);
-
+            //return Json(json.AsEnumerable().Select(r => new
+            //{
+            //    voimassaolopvm = r.voimassaolopvm.GetValueOrDefault().ToString("dd.MM.yyyy"),
+            //    palkintonimi = r.palkintonimi
+            //}), JsonRequestBehavior.AllowGet);
 
         }
 

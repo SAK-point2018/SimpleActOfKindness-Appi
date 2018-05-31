@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SimpleActOfKindnessApp1.Models.SAKtehdytteot>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TehdytTeotID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KayttajaID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tekopvm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PalkintoID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VoimassaOloPvm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TekoID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TehdytTeotID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KayttajaID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tekopvm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PalkintoID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VoimassaOloPvm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TekoID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
