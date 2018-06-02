@@ -23,6 +23,8 @@ namespace SimpleActOfKindnessApp1.Controllers
         {
             ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
 
+            CultureInfo fiFI = new CultureInfo("fi-FI");
+
             var lunastamattomat = (from lun in entities.SAKtehdytteot
                                    join palkinto in entities.SAKpalkinto 
                                    on lun.PalkintoID equals palkinto.PalkintoID
@@ -56,6 +58,7 @@ namespace SimpleActOfKindnessApp1.Controllers
             //tietokantahaku
             ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
 
+                
             //SAKteot- ja SAKtehdytteot-taulujen liitos InnerJoinilla
             //(TeonNimi täytyy hakea SAKteot-taulusta)
             var innerJoinQuery = (from tehtyteko in entities.SAKtehdytteot

@@ -341,7 +341,6 @@
     <Content Include="Views\Prize\Index.cshtml" />
     <Content Include="Views\Login\LoginLayout.cshtml" />
     <Content Include="Views\Profile\ProfilePage.cshtml" />
-    <Content Include="Views\Profile\ProfilePageLayout.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\umd\popper.min.js.map" />

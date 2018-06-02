@@ -1,16 +1,21 @@
 ﻿@{
     ViewBag.Title = "ProfilePage";
 }
+
+
 <h1>SIMPLE ACT OF KINDNESS</h1>
 @* Kirjatuneen henkilön nimi + uloskirjautumisnappula *@
 <h3>
     Matti Meikäläinen
     <small>
         <span class="btn-group">
-            <button class="btn-default" id="buttonX">Exit</button>
+            <button class="btn-default" id="button1">Exit</button>
         </span>
     </small>
 </h3>
+
+
+<h2>Lunastamattomat palkinnot</h2>
 
 @* Lunastamattomat palkinnot nappuloina, nappulassa palkinto + vanhemenisaika  *@
 @section scripts {
@@ -24,26 +29,21 @@
 
                 for (var index = 0; index < lunastamattomat.length; index++) {
                     //alert(lunastamattomat[index].voimassaolopvm);
-                    var nappulateksti = lunastamattomat[index].palkintoID+lunastamattomat[index].palkintonimi + " " + lunastamattomat[index].voimassaolopvm;
+                    var nappulateksti = lunastamattomat[index].palkintoID + " " + lunastamattomat[index].palkintonimi + " " + lunastamattomat[index].voimassaolopvm;
                     var palkintoID = lunastamattomat[index].palkintoID;
                     var url = "/lunastus/showsingleprize/" + palkintoID;
                     //alert(url);
                     html +=
                         "<div id='nappulat'>" +
-                        "<a href="+ url + " class='btn btn-default'>" + nappulateksti + "</a>" +
-                        "</div>"
+                        "<a href=" + url + " class='btn btn-default'>" + nappulateksti + "</a>" +
+                        "</div></div>"
                 }
                 $('#lunastamattomatpalkinnot p').html(html);
             });
         });
     </script>
 
-    <div id=lunastamattomatpalkinnot>
-        <p>
-        </p>
-    </div>
 
-    <h2 style="font-size: 25px; padding-left: 20px"> Lunastetut hyvät työt</h2>
 
     @* Tehdyt hyvät työt -lista, teko + kirjauspvm *@
 
@@ -60,7 +60,7 @@
                     //alert("arvo on: " + tehdytTeot[index].Tekopvm);
                     html +=
                         "<tr>" +
-                    "<td>" + tehdytTeot[index].TeonNimi + "</td>" +
+                        "<td>" + tehdytTeot[index].TeonNimi + "</td>" +
                         "<td>" + tehdytTeot[index].Tekopvm + "</td>" +
                         "</tr>\r\n";
                     //    "<ul class='list-group'>" +
@@ -72,12 +72,25 @@
         });
     </script>
 }
+
+
+
+<div id=lunastamattomatpalkinnot>
+    <p>
+    </p>
+</div>
+
+<h2>Tehdyt hyvät työt</h2>
+
 <div>
     <table id="tehtyTekoTaulukko">
         <tbody></tbody>
     </table>
 </div>
 <div id=tehtytekolist style="width:auto;">
-        <ul>
-        </ul>
-    </div>
+    <ul></ul>
+</div>
+
+
+
+
