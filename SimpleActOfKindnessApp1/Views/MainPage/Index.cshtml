@@ -13,16 +13,16 @@
     <link href="~/Content/Styles/LoginStyle.css" rel="stylesheet" />
     <script type="text/javascript">
         $(function () {
-            $.getJSON("/Profile/Lunastamattomatpalkinnot", null, function (json) {
-                var kirjaateko = JSON.parse(json);
+            $.getJSON("/MainPage/HyvaTeko", null, function (json) {
+                var hyvateko = JSON.parse(json);
 
                 var html = "";
 
-                for (var index = 0; index < kirjaateko.length; index++) {
+                for (var index = 0; index < hyvateko.length; index++) {
                     //alert(lunastamattomat[index].voimassaolopvm);
-                    var nappulateksti = kirjaateko[index].palkintoID + " " + kirjaateko[index].palkintonimi + " " + kirjaateko[index].voimassaolopvm;
-                    var palkintoID = kirjaateko[index].palkintoID;
-                    var url = "/prize/Index/" + palkintoID;
+                    var nappulateksti = hyvateko[index].tekoID + " " + hyvateko[index].teonnimi;
+                    var tekoID = hyvateko[index].tekoID;
+                    var url = "/prize/Index/" + tekoID;
                     //alert(url);
                     html +=
                         "<div id='nappulat'>" +
