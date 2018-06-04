@@ -337,7 +337,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\MainPage\Index.cshtml" />
-    <Content Include="Views\MainPage\MainPageLayout.cshtml" />
     <Content Include="Views\Prize\Index.cshtml" />
     <Content Include="Views\Login\LoginLayout.cshtml" />
     <Content Include="Views\Profile\ProfilePage.cshtml" />
@@ -383,7 +382,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53456</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
