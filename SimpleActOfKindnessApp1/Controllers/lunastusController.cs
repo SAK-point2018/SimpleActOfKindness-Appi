@@ -54,12 +54,13 @@ namespace SimpleActOfKindnessApp1.Controllers
                 int ipalkintoID = int.Parse(id);
                 ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
                 var model = (from tt in entities.SAKtehdytteot
-                             where tt.PalkintoID == ipalkintoID
-                             select new
-                             {
+                              where tt.PalkintoID == ipalkintoID
+                              select new
+                            {
                                  TehdytTeotID = tt.TehdytTeotID,
                                  KayttajaID = tt.KayttajaID,
                                  Tekopvm = tt.Tekopvm,
+                                 //PalkintoNimi = p.PalkintoNimi,
                                  PalkintoID = tt.PalkintoID,
                                  VoimassaOloPvm = tt.VoimassaOloPvm,
                                  TekoID = tt.TekoID
@@ -68,6 +69,7 @@ namespace SimpleActOfKindnessApp1.Controllers
                 ViewBag.TehdytTeotID = model.TehdytTeotID;
                 ViewBag.KayttajaID = model.KayttajaID;
                 ViewBag.Tekopvm = model.Tekopvm;
+                //ViewBag.PalkintoNimi = model.PalkintoNimi;
                 ViewBag.PalkintoID = model.PalkintoID;
                 ViewBag.VoimassaOloPvm = model.VoimassaOloPvm;
                 ViewBag.TekoID = model.TekoID;

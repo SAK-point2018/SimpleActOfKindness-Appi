@@ -2,14 +2,20 @@
     ViewBag.Title = "ShowSinglePrize";
     
 }
+<link href="~/Content/Styles/LoginStyle.css" rel="stylesheet" />
 
 <h2>Palkinnon käyttäminen</h2>
 <h3>@ViewBag.Testi</h3>
 <p>Teon ID: @ViewBag.TehdytTeotID</p>
 <p>Käyttäjän ID: @ViewBag.KayttajaID </p>
 <p>Hyvän teon Pvm: @ViewBag.Tekopvm</p>
+@*<p>Palkinnon nimi: @ViewBag.PalkintoNimi</p>*@
 <p>Palkinnon ID: @ViewBag.PalkintoID</p>
 <p>Palkinnon voimassaolopvm: @ViewBag.VoimassaOloPvm</p>
 <p>Hyvän teon ID: @ViewBag.TekoID</p>
 
+<a href="/Profile/ProfilePage" class="btn" id="button1">Käytä palkinto</a>
+<br />
+<br/>
+<a href="/Profile/ProfilePage" class="btn" id="button1">Takaisin</a>
 
