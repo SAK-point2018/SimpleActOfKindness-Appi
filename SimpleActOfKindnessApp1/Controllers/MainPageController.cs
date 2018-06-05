@@ -11,7 +11,7 @@ namespace SimpleActOfKindnessApp1.Controllers
 {
     public class MainPageController : Controller
     {
-        // GET: Profile
+        // GET: MainPage
         public ActionResult Index()
         {
             return View();
