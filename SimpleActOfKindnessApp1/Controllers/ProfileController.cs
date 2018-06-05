@@ -58,7 +58,8 @@ namespace SimpleActOfKindnessApp1.Controllers
             //tietokantahaku
             ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
 
-                
+            
+
             //SAKteot- ja SAKtehdytteot-taulujen liitos InnerJoinilla
             //(TeonNimi täytyy hakea SAKteot-taulusta)
             var innerJoinQuery = (from tehtyteko in entities.SAKtehdytteot
