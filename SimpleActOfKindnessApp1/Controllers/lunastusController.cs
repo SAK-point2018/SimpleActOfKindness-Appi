@@ -53,23 +53,41 @@ namespace SimpleActOfKindnessApp1.Controllers
             {
                 int ipalkintoID = int.Parse(id);
                 ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
-                var model = (from tt in entities.SAKtehdytteot
-                              where tt.PalkintoID == ipalkintoID
-                              select new
-                            {
-                                 TehdytTeotID = tt.TehdytTeotID,
-                                 KayttajaID = tt.KayttajaID,
-                                 Tekopvm = tt.Tekopvm,
-                                 //PalkintoNimi = p.PalkintoNimi,
-                                 PalkintoID = tt.PalkintoID,
-                                 VoimassaOloPvm = tt.VoimassaOloPvm,
-                                 TekoID = tt.TekoID
-                             }).FirstOrDefault();
+                //var model = (from tt in entities.SAKtehdytteot
+                //              where tt.PalkintoID == ipalkintoID
+                //              select new
+                //            {
+                //                 TehdytTeotID = tt.TehdytTeotID,
+                //                 KayttajaID = tt.KayttajaID,
+                //                 Tekopvm = tt.Tekopvm,
+                //                 //PalkintoNimi = p.PalkintoNimi,
+                //                 PalkintoID = tt.PalkintoID,
+                //                 VoimassaOloPvm = tt.VoimassaOloPvm,
+                //                 TekoID = tt.TekoID
+                //             }).FirstOrDefault();
+                var model = (from p in entities.SAKpalkinto
+                                 join t in entities.SAKtehdytteot on p.PalkintoID equals t.PalkintoID
+                                 join k in entities.SAKkayttaja on t.KayttajaID equals k.KayttajaID
+                                 join r in entities.SAKpalkinnontarjoaja on p.PalkinnonTarjoajaID equals r.PalkinnontarjoajaID
+                                 select new
+                                 {
+                                     palkintonimi = p.PalkintoNimi,
+                                     yrityksennimi = r.YrityksenNimi,
+                                     kayttajatunnus = k.Kayttajatunnus,
+                                     TehdytTeotID = t.TehdytTeotID,
+                                     KayttajaID = t.KayttajaID,
+                                     Tekopvm = t.Tekopvm,
+                                     PalkintoNimi = p.PalkintoNimi,
+                                     PalkintoID = t.PalkintoID,
+                                     VoimassaOloPvm = t.VoimassaOloPvm,
+                                     TekoID = t.TekoID
+
+                                 }).FirstOrDefault();
 
                 ViewBag.TehdytTeotID = model.TehdytTeotID;
                 ViewBag.KayttajaID = model.KayttajaID;
                 ViewBag.Tekopvm = model.Tekopvm;
-                //ViewBag.PalkintoNimi = model.PalkintoNimi;
+                ViewBag.PalkintoNimi = model.PalkintoNimi;
                 ViewBag.PalkintoID = model.PalkintoID;
                 ViewBag.VoimassaOloPvm = model.VoimassaOloPvm;
                 ViewBag.TekoID = model.TekoID;
