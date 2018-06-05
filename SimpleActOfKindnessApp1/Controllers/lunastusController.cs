@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Globalization; //Dan 5.6.2018
 
 namespace SimpleActOfKindnessApp1.Controllers
 {
@@ -31,8 +32,9 @@ namespace SimpleActOfKindnessApp1.Controllers
 
             ////return Json(json, JsonRequestBehavior.AllowGet);
             //return View(model);
+            
 
-            List<SAKtehdytteot> model = new List<SAKtehdytteot>();
+            List<SAKtehdytteot> model = new List<SAKtehdytteot>();  
             try
             {
                 ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
@@ -49,29 +51,37 @@ namespace SimpleActOfKindnessApp1.Controllers
     
         public ActionResult ShowSinglePrize(string id)
         {
+            CultureInfo culture = new CultureInfo("fi-FI");  //Dan 5.6.2018
             try
             {
                 int ipalkintoID = int.Parse(id);
                 ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
-                var model = (from tt in entities.SAKtehdytteot
-                              where tt.PalkintoID == ipalkintoID
-                              select new
-                            {
-                                 TehdytTeotID = tt.TehdytTeotID,
-                                 KayttajaID = tt.KayttajaID,
-                                 Tekopvm = tt.Tekopvm,
-                                 //PalkintoNimi = p.PalkintoNimi,
-                                 PalkintoID = tt.PalkintoID,
-                                 VoimassaOloPvm = tt.VoimassaOloPvm,
-                                 TekoID = tt.TekoID
-                             }).FirstOrDefault();
+                //Dan 5.6.2018: LINQ -kyselyn kehittäminen
+                var model = (from p in entities.SAKpalkinto
+                                 join t in entities.SAKtehdytteot on p.PalkintoID equals t.PalkintoID
+                                 join k in entities.SAKkayttaja on t.KayttajaID equals k.KayttajaID
+                                 join r in entities.SAKpalkinnontarjoaja on p.PalkinnonTarjoajaID equals r.PalkinnontarjoajaID
+                                 select new
+                                 {
+                                     palkintonimi = p.PalkintoNimi,
+                                     yrityksennimi = r.YrityksenNimi,
+                                     kayttajatunnus = k.Kayttajatunnus,
+                                     TehdytTeotID = t.TehdytTeotID,
+                                     KayttajaID = t.KayttajaID,
+                                     Tekopvm = t.Tekopvm,
+                                     PalkintoNimi = p.PalkintoNimi,
+                                     PalkintoID = t.PalkintoID,
+                                     VoimassaOloPvm = t.VoimassaOloPvm,
+                                     TekoID = t.TekoID
+
+                                 }).FirstOrDefault();
 
                 ViewBag.TehdytTeotID = model.TehdytTeotID;
                 ViewBag.KayttajaID = model.KayttajaID;
-                ViewBag.Tekopvm = model.Tekopvm;
-                //ViewBag.PalkintoNimi = model.PalkintoNimi;
+                ViewBag.Tekopvm = model.Tekopvm.ToString("d", culture);  //Dan 5.6.2018
+                ViewBag.PalkintoNimi = model.PalkintoNimi;
                 ViewBag.PalkintoID = model.PalkintoID;
-                ViewBag.VoimassaOloPvm = model.VoimassaOloPvm;
+                ViewBag.VoimassaOloPvm = model.VoimassaOloPvm.ToString("D",culture);   //Dan 5.6.2018
                 ViewBag.TekoID = model.TekoID;
 
                 ViewBag.DBMessage = "Tietokantahaku onnistui!";
