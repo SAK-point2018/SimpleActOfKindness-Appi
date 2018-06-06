@@ -55,10 +55,11 @@ namespace SimpleActOfKindnessApp1.Controllers
         //tehtyjen tekojen listaaminen
         public JsonResult Tehdytteotlista()
         {
+            
             //tietokantahaku
             ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
-
             
+            CultureInfo culture = new CultureInfo("fi-FI");
 
             //SAKteot- ja SAKtehdytteot-taulujen liitos InnerJoinilla
             //(TeonNimi täytyy hakea SAKteot-taulusta)

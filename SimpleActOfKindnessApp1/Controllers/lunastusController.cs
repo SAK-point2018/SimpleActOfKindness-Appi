@@ -61,6 +61,7 @@ namespace SimpleActOfKindnessApp1.Controllers
                                  join t in entities.SAKtehdytteot on p.PalkintoID equals t.PalkintoID
                                  join k in entities.SAKkayttaja on t.KayttajaID equals k.KayttajaID
                                  join r in entities.SAKpalkinnontarjoaja on p.PalkinnonTarjoajaID equals r.PalkinnontarjoajaID
+                                 where p.PalkintoID == ipalkintoID //Anne 6.6.2018
                                  select new
                                  {
                                      palkintonimi = p.PalkintoNimi,
