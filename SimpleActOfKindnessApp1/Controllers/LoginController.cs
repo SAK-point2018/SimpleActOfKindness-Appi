@@ -13,7 +13,7 @@ namespace SimpleActOfKindnessApp1.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        public ActionResult Login()
+        public ActionResult LoginPage()
         {
             return View();
         }
