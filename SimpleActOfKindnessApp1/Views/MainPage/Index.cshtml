@@ -6,7 +6,7 @@
 
 <h2>Tervetuloa käyttäjä</h2>
 
-@* Lunastamattomat palkinnot nappuloina, nappulassa palkinto + vanhemenisaika  *@
+
 @section scripts {
     <link href="~/Content/Styles/LoginStyle.css" rel="stylesheet" />
     <script type="text/javascript">
@@ -33,31 +33,6 @@
         });
     </script>
 
-
-
-    @* Tehdyt hyvät työt -lista, teko + kirjauspvm *@
-
-    @*tehtyjen tekojen listaaminen tietokannasta JavaScriptillä JSON-kutsu palvelimelle*@
-    <script type="text/javascript">
-        $(function () {
-            $.getJSON("/Profile/Tehdytteotlista", null, function (json) {
-                var tehdytTeot = JSON.parse(json);
-                //alert("tehdyt teot: " + tehdytTeot.length);
-
-                var html = "";
-
-                for (var index = 0; index < tehdytTeot.length; index++) {
-                    //alert("arvo on: " + tehdytTeot[index].Tekopvm);
-                    html +=
-                        "<tr>" +
-                        "<td>" + tehdytTeot[index].TeonNimi + "</td>" +
-                        "<td>" + tehdytTeot[index].Tekopvm + "</td>" +
-                        "</tr>\r\n";
-                }
-                $('#tehtyTekoTaulukko').html(html);
-            });
-        });
-    </script>
 }
 
 
