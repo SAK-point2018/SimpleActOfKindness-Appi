@@ -1,12 +1,44 @@
 ﻿@{
-    Layout = "~/Views/Login/LoginLayout.cshtml";
-}
-
-@{
     ViewBag.Title = "Prize";
 }
 
 <h2>Olet ansainnut palkinnon!</h2>
+
+@section scripts {
+    <link href="~/Content/Styles/LoginStyle.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $.getJSON("/Prize/Palkinto", null, function (json) {
+                var hyvateko = JSON.parse(json);
+
+                var html = "";
+
+                for (var index = 0; index < palkinto.length; index++) {
+                    //alert(lunastamattomat[index].voimassaolopvm);
+                    var nappulateksti = palkinto[index].PalkintoNimi;
+                    var PalkintoID = palkinto[index].PalkintoID;
+                    var url = "/prize/Index/" + PalkintoID;
+                    //alert(url);
+                    html +=
+                        "<div id='nappulat'>" +
+                        "<br></br>"+
+                    "<a href=" + url + " class='btn btn-default'>" + nappulateksti + "</a>" +
+                        "</div></div>"
+                }
+                $('#lunastamattomatpalkinnot p').html(html);
+            });
+        });
+    </script>
+
+}
+
+
+
+<div id=lunastamattomatpalkinnot>
+    <p>
+    </p>
+</div>
+<a href="/Profile/ProfilePage" class="btn" id="button1">Profiilisivulle</a>
 
 <div class="display-field" style="margin-left:30px;">
     <img src="~/Models/Peukku.jpg" />
