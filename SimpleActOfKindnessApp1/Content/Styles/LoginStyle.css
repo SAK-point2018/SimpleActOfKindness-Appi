@@ -6,7 +6,9 @@
 }
 h1 {
     font-family:'Curlz MT';
-    padding: 10px 30px;
+}
+h2{
+    margin-left:70px;
 }
 #footer {
     padding:30px;
