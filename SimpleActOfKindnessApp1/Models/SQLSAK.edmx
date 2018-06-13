@@ -44,6 +44,7 @@
           <Property Name="PalkintoID" Type="int" Nullable="false" />
           <Property Name="VoimassaOloPvm" Type="date" Nullable="false" />
           <Property Name="TekoID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="SAKteot">
           <Key>
@@ -112,6 +113,7 @@
           <Property Name="PalkintoID" Type="Int32" Nullable="false" />
           <Property Name="VoimassaOloPvm" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="TekoID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" />
         </EntityType>
         <EntityType Name="SAKteot">
           <Key>
@@ -178,6 +180,7 @@
           <EntitySetMapping Name="SAKtehdytteots">
             <EntityTypeMapping TypeName="ScrumDB2018KModel.SAKtehdytteot">
               <MappingFragment StoreEntitySet="SAKtehdytteot">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="TehdytTeotID" ColumnName="TehdytTeotID" />
                 <ScalarProperty Name="KayttajaID" ColumnName="KayttajaID" />
                 <ScalarProperty Name="Tekopvm" ColumnName="Tekopvm" />

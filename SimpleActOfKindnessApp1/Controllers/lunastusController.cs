@@ -84,6 +84,7 @@ namespace SimpleActOfKindnessApp1.Controllers
                 ViewBag.PalkintoID = model.PalkintoID;
                 ViewBag.VoimassaOloPvm = model.VoimassaOloPvm.ToString("D",culture);   //Dan 5.6.2018
                 ViewBag.TekoID = model.TekoID;
+                ViewBag.PalkinnonKayttoPolku = "/lunastus/UseSinglePrize/"+model.PalkintoID;
 
                 ViewBag.DBMessage = "Tietokantahaku onnistui!";
                 //string json = JsonConvert.SerializeObject(model);
@@ -100,6 +101,27 @@ namespace SimpleActOfKindnessApp1.Controllers
             //return Json(json, JsonRequestBehavior.AllowGet);
 
         }
+        public ActionResult UseSinglePrize(string id)
+        {
+            bool OK = false;
+            ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+            int ipalkintoID = int.Parse(id);
 
+            // muokkaus, haetaan id:n perusteella riviä tietokannasta
+            SAKpalkinto db = (from c in entities.SAKpalkinto
+                               where c.PalkintoID == ipalkintoID
+                              select c).FirstOrDefault();
+            if (db != null)
+            {
+                //db.
+                // tallennus tietokantaan
+                entities.SaveChanges();
+                OK = true;
+            }
+        
+            entities.Dispose();
+            return Json(OK, JsonRequestBehavior.AllowGet);
+            //return View();
+        }
     }
 }

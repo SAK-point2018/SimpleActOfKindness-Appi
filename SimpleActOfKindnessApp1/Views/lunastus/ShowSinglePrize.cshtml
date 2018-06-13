@@ -1,7 +1,14 @@
 ﻿@{
     ViewBag.Title = "ShowSinglePrize";
-    
+
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+
 <link href="~/Content/Styles/LoginStyle.css" rel="stylesheet" />
 <h1>SIMPLE ACT OF KINDNESS</h1>
 <h2>Palkinnon käyttäminen</h2>
@@ -14,8 +21,19 @@
 <p>Palkinnon voimassaolopvm: @ViewBag.VoimassaOloPvm</p>
 <p>Hyvän teon ID: @ViewBag.TekoID</p>
 
+@*<script>
+    var url = "/Profile/ProfilePage" + @ViewBag.PalkintoID;
+    document.getElementById("KontrolleriLinkki").innerHTML = url;
+
+</script>*@
+
+
 <a href="/Profile/ProfilePage" class="btn" id="button1">Käytä palkinto</a>
 <br />
-<br/>
+<a href="@ViewBag.PalkinnonKayttoPolku" class="btn" id="button1">Käytä palkinto</a>
+<br />
+<br />
 <a href="/Profile/ProfilePage" class="btn" id="button1">Takaisin</a>
 
+
+</html>
