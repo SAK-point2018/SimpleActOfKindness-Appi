@@ -33,7 +33,7 @@ namespace SimpleActOfKindnessApp1.Controllers
                                        palkintonimi = palkinto.PalkintoNimi,
                                        voimassaolopvm = lun.VoimassaOloPvm,
                                        palkintoID = lun.PalkintoID,
-                                       
+                                       status = lun.Status
 
                                    }).ToList();
 
