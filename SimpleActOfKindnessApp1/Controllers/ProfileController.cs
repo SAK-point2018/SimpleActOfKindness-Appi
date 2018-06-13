@@ -28,6 +28,7 @@ namespace SimpleActOfKindnessApp1.Controllers
             var lunastamattomat = (from lun in entities.SAKtehdytteot
                                    join palkinto in entities.SAKpalkinto
                                    on lun.PalkintoID equals palkinto.PalkintoID
+                                   where lun.Status == 0
                                    select new
                                    {
                                        palkintonimi = palkinto.PalkintoNimi,

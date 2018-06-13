@@ -108,9 +108,9 @@ namespace SimpleActOfKindnessApp1.Controllers
             int ipalkintoID = int.Parse(id);
 
             // muokkaus, haetaan id:n perusteella riviä tietokannasta
-            SAKtehdytteot db = (from c in entities.SAKtehdytteot
-                               where c.PalkintoID == ipalkintoID
-                              select c).FirstOrDefault();
+            SAKtehdytteot db = (from t in entities.SAKtehdytteot
+                               where t.PalkintoID == ipalkintoID
+                              select t).FirstOrDefault();
             if (db != null)
             {
                 db.Status = 1;
