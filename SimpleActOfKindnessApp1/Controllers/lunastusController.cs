@@ -104,16 +104,16 @@ namespace SimpleActOfKindnessApp1.Controllers
         public ActionResult UseSinglePrize(string id)
         {
             bool OK = false;
-            ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+            ScrumDB2018KEntities1 entities = new ScrumDB2018KEntities1();
             int ipalkintoID = int.Parse(id);
 
             // muokkaus, haetaan id:n perusteella riviä tietokannasta
-            SAKpalkinto db = (from c in entities.SAKpalkinto
+            SAKtehdytteot db = (from c in entities.SAKtehdytteot
                                where c.PalkintoID == ipalkintoID
                               select c).FirstOrDefault();
             if (db != null)
             {
-                //db.
+                db.Status = 1;
                 // tallennus tietokantaan
                 entities.SaveChanges();
                 OK = true;
