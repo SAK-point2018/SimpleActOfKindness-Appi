@@ -19,7 +19,7 @@ namespace SimpleActOfKindnessApp1.Controllers
 
         public JsonResult HyvaTeko()
         {
-            ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+            ScrumDB2018KEntities1 entities = new ScrumDB2018KEntities1();
 
             CultureInfo fiFI = new CultureInfo("fi-FI");
 

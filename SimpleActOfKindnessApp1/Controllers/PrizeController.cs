@@ -22,7 +22,7 @@ namespace SimpleActOfKindnessApp1.Controllers
         }
         public ActionResult GetPalkinnot(string kayttajaid)
         {
-            ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+            ScrumDB2018KEntities1 entities = new ScrumDB2018KEntities1();
 
             var palkinnot = (from p in entities.SAKpalkinto
                              join t in entities.SAKtehdytteot on p.PalkintoID equals t.PalkintoID
@@ -46,7 +46,7 @@ namespace SimpleActOfKindnessApp1.Controllers
         }
         public JsonResult Palkinto()
         {
-            ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+            ScrumDB2018KEntities1 entities = new ScrumDB2018KEntities1();
 
             var palkinto = (from palk in entities.SAKpalkinto
 

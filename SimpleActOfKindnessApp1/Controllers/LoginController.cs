@@ -47,7 +47,7 @@ namespace SimpleActOfKindnessApp1.Controllers
         //entiteetin avulla tietokantakysely
         protected void ButtonKirjaudu(object sender, EventArgs e)
         {
-            SAKEntities entities = new SAKEntities();
+            ScrumDB2018KEntities1 entities = new ScrumDB2018KEntities1();
             //luodaan Sql-kyselylauseen objektit
             //string Ktunnus = sposti.Text;
             //string Salas = psw.Text;

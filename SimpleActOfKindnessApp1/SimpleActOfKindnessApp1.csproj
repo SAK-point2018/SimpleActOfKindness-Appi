@@ -172,7 +172,7 @@
       <DependentUpon>Pictures2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKkayttaja.cs">
-      <DependentUpon>SQLSAK.tt</DependentUpon>
+      <DependentUpon>ScrumSAK.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -190,16 +190,31 @@
       <DependentUpon>SAKModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKpalkinnontarjoaja.cs">
-      <DependentUpon>SQLSAK.tt</DependentUpon>
+      <DependentUpon>ScrumSAK.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKpalkinto.cs">
-      <DependentUpon>SQLSAK.tt</DependentUpon>
+      <DependentUpon>ScrumSAK.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKtehdytteot.cs">
-      <DependentUpon>SQLSAK.tt</DependentUpon>
+      <DependentUpon>ScrumSAK.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SAKteot.cs">
-      <DependentUpon>SQLSAK.tt</DependentUpon>
+      <DependentUpon>ScrumSAK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ScrumSAK.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScrumSAK.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ScrumSAK.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScrumSAK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ScrumSAK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScrumSAK.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\SQLSAK.Context.cs">
       <AutoGen>True</AutoGen>
@@ -218,6 +233,9 @@
     </Compile>
     <Compile Include="Models\tblImage.cs">
       <DependentUpon>SQLSAK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblImages.cs">
+      <DependentUpon>ScrumSAK.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -246,6 +264,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SAKModel.edmx</DependentUpon>
       <LastGenOutput>SAKModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ScrumSAK.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ScrumSAK.edmx</DependentUpon>
+      <LastGenOutput>ScrumSAK.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ScrumSAK.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ScrumSAK.edmx</DependentUpon>
+      <LastGenOutput>ScrumSAK.cs</LastGenOutput>
     </Content>
     <Content Include="Models\SQLSAK.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -296,6 +324,13 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\ScrumSAK.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ScrumSAK.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ScrumSAK.edmx.diagram">
+      <DependentUpon>ScrumSAK.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

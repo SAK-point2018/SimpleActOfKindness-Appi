@@ -21,18 +21,19 @@ namespace SimpleActOfKindnessApp1.Controllers
 
         public JsonResult Lunastamattomatpalkinnot()
         {
-            ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+            ScrumDB2018KEntities1 entities = new ScrumDB2018KEntities1();
 
             CultureInfo fiFI = new CultureInfo("fi-FI");
 
             var lunastamattomat = (from lun in entities.SAKtehdytteot
-                                   join palkinto in entities.SAKpalkinto 
+                                   join palkinto in entities.SAKpalkinto
                                    on lun.PalkintoID equals palkinto.PalkintoID
                                    select new
                                    {
                                        palkintonimi = palkinto.PalkintoNimi,
                                        voimassaolopvm = lun.VoimassaOloPvm,
-                                       palkintoID = lun.PalkintoID
+                                       palkintoID = lun.PalkintoID,
+                                       
 
                                    }).ToList();
 
@@ -57,7 +58,7 @@ namespace SimpleActOfKindnessApp1.Controllers
         {
             
             //tietokantahaku
-            ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+            ScrumDB2018KEntities1 entities = new ScrumDB2018KEntities1();
             
             CultureInfo culture = new CultureInfo("fi-FI");
 

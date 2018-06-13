@@ -12,14 +12,11 @@ namespace SimpleActOfKindnessApp1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SAKtehdytteot
+    public partial class tblImages
     {
-        public int TehdytTeotID { get; set; }
-        public int KayttajaID { get; set; }
-        public System.DateTime Tekopvm { get; set; }
-        public int PalkintoID { get; set; }
-        public System.DateTime VoimassaOloPvm { get; set; }
-        public int TekoID { get; set; }
-        public Nullable<int> Status { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> Size { get; set; }
+        public byte[] ImageData { get; set; }
     }
 }

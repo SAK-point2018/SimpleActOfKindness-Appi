@@ -14,7 +14,7 @@ namespace SimpleActOfKindnessApp1.Controllers
         // GET: lunastus
         public ActionResult Index()
         {
-            //ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+            //ScrumDB2018KEntities1 entities = new ScrumDB2018KEntities1();
             //var model = (from tt in entities.SAKtehdytteot
             //             where tt.PalkintoID == 102
             //             select new
@@ -37,7 +37,7 @@ namespace SimpleActOfKindnessApp1.Controllers
             List<SAKtehdytteot> model = new List<SAKtehdytteot>();  
             try
             {
-                ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+                ScrumDB2018KEntities1 entities = new ScrumDB2018KEntities1();
                 model = entities.SAKtehdytteot.ToList();
                 entities.Dispose();
             }
@@ -55,7 +55,7 @@ namespace SimpleActOfKindnessApp1.Controllers
             try
             {
                 int ipalkintoID = int.Parse(id);
-                ScrumDB2018KEntities entities = new ScrumDB2018KEntities();
+                ScrumDB2018KEntities1 entities = new ScrumDB2018KEntities1();
                 //Dan 5.6.2018: LINQ -kyselyn kehittäminen
                 var model = (from p in entities.SAKpalkinto
                                  join t in entities.SAKtehdytteot on p.PalkintoID equals t.PalkintoID

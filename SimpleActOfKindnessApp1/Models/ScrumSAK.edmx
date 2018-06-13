@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ScrumDB2018KModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SAKkayttaja">
+          <Key>
+            <PropertyRef Name="KayttajaID" />
+          </Key>
+          <Property Name="KayttajaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kayttajatunnus" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Salasana" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SAKpalkinnontarjoaja">
+          <Key>
+            <PropertyRef Name="PalkinnontarjoajaID" />
+          </Key>
+          <Property Name="PalkinnontarjoajaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YrityksenNimi" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Etunimi" Type="varchar" MaxLength="100" />
+          <Property Name="Sukunimi" Type="varchar" MaxLength="100" />
+          <Property Name="Sahkoposti" Type="varchar" MaxLength="100" />
+          <Property Name="Puhelinnumero" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="SAKpalkinto">
+          <Key>
+            <PropertyRef Name="PalkintoID" />
+          </Key>
+          <Property Name="PalkintoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PalkintoNimi" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PalkinnonTarjoajaID" Type="int" Nullable="false" />
+          <Property Name="PalkintoKuva" Type="varbinary(max)" />
+          <Property Name="KuvanKoko" Type="int" />
+        </EntityType>
+        <EntityType Name="SAKtehdytteot">
+          <Key>
+            <PropertyRef Name="TehdytTeotID" />
+          </Key>
+          <Property Name="TehdytTeotID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KayttajaID" Type="int" Nullable="false" />
+          <Property Name="Tekopvm" Type="date" Nullable="false" />
+          <Property Name="PalkintoID" Type="int" Nullable="false" />
+          <Property Name="VoimassaOloPvm" Type="date" Nullable="false" />
+          <Property Name="TekoID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="SAKteot">
+          <Key>
+            <PropertyRef Name="TekoID" />
+          </Key>
+          <Property Name="TekoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeonNimi" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Size" Type="int" />
+          <Property Name="ImageData" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="ScrumDB2018KModel1StoreContainer">
+          <EntitySet Name="SAKkayttaja" EntityType="Self.SAKkayttaja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAKpalkinnontarjoaja" EntityType="Self.SAKpalkinnontarjoaja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAKpalkinto" EntityType="Self.SAKpalkinto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAKtehdytteot" EntityType="Self.SAKtehdytteot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAKteot" EntityType="Self.SAKteot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblImages" EntityType="Self.tblImages" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ScrumDB2018KModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SAKkayttaja">
+          <Key>
+            <PropertyRef Name="KayttajaID" />
+          </Key>
+          <Property Name="KayttajaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kayttajatunnus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Salasana" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SAKpalkinnontarjoaja">
+          <Key>
+            <PropertyRef Name="PalkinnontarjoajaID" />
+          </Key>
+          <Property Name="PalkinnontarjoajaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YrityksenNimi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Etunimi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sukunimi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sahkoposti" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Puhelinnumero" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SAKpalkinto">
+          <Key>
+            <PropertyRef Name="PalkintoID" />
+          </Key>
+          <Property Name="PalkintoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PalkintoNimi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PalkinnonTarjoajaID" Type="Int32" Nullable="false" />
+          <Property Name="PalkintoKuva" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="KuvanKoko" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SAKtehdytteot">
+          <Key>
+            <PropertyRef Name="TehdytTeotID" />
+          </Key>
+          <Property Name="TehdytTeotID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KayttajaID" Type="Int32" Nullable="false" />
+          <Property Name="Tekopvm" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PalkintoID" Type="Int32" Nullable="false" />
+          <Property Name="VoimassaOloPvm" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TekoID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SAKteot">
+          <Key>
+            <PropertyRef Name="TekoID" />
+          </Key>
+          <Property Name="TekoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeonNimi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="Int32" />
+          <Property Name="ImageData" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="ScrumDB2018KEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SAKkayttaja" EntityType="Self.SAKkayttaja" />
+          <EntitySet Name="SAKpalkinnontarjoaja" EntityType="Self.SAKpalkinnontarjoaja" />
+          <EntitySet Name="SAKpalkinto" EntityType="Self.SAKpalkinto" />
+          <EntitySet Name="SAKtehdytteot" EntityType="Self.SAKtehdytteot" />
+          <EntitySet Name="SAKteot" EntityType="Self.SAKteot" />
+          <EntitySet Name="tblImages" EntityType="Self.tblImages" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ScrumDB2018KModel1StoreContainer" CdmEntityContainer="ScrumDB2018KEntities1">
+          <EntitySetMapping Name="SAKkayttaja">
+            <EntityTypeMapping TypeName="ScrumDB2018KModel1.SAKkayttaja">
+              <MappingFragment StoreEntitySet="SAKkayttaja">
+                <ScalarProperty Name="KayttajaID" ColumnName="KayttajaID" />
+                <ScalarProperty Name="Kayttajatunnus" ColumnName="Kayttajatunnus" />
+                <ScalarProperty Name="Salasana" ColumnName="Salasana" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAKpalkinnontarjoaja">
+            <EntityTypeMapping TypeName="ScrumDB2018KModel1.SAKpalkinnontarjoaja">
+              <MappingFragment StoreEntitySet="SAKpalkinnontarjoaja">
+                <ScalarProperty Name="PalkinnontarjoajaID" ColumnName="PalkinnontarjoajaID" />
+                <ScalarProperty Name="YrityksenNimi" ColumnName="YrityksenNimi" />
+                <ScalarProperty Name="Etunimi" ColumnName="Etunimi" />
+                <ScalarProperty Name="Sukunimi" ColumnName="Sukunimi" />
+                <ScalarProperty Name="Sahkoposti" ColumnName="Sahkoposti" />
+                <ScalarProperty Name="Puhelinnumero" ColumnName="Puhelinnumero" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAKpalkinto">
+            <EntityTypeMapping TypeName="ScrumDB2018KModel1.SAKpalkinto">
+              <MappingFragment StoreEntitySet="SAKpalkinto">
+                <ScalarProperty Name="PalkintoID" ColumnName="PalkintoID" />
+                <ScalarProperty Name="PalkintoNimi" ColumnName="PalkintoNimi" />
+                <ScalarProperty Name="PalkinnonTarjoajaID" ColumnName="PalkinnonTarjoajaID" />
+                <ScalarProperty Name="PalkintoKuva" ColumnName="PalkintoKuva" />
+                <ScalarProperty Name="KuvanKoko" ColumnName="KuvanKoko" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAKtehdytteot">
+            <EntityTypeMapping TypeName="ScrumDB2018KModel1.SAKtehdytteot">
+              <MappingFragment StoreEntitySet="SAKtehdytteot">
+                <ScalarProperty Name="TehdytTeotID" ColumnName="TehdytTeotID" />
+                <ScalarProperty Name="KayttajaID" ColumnName="KayttajaID" />
+                <ScalarProperty Name="Tekopvm" ColumnName="Tekopvm" />
+                <ScalarProperty Name="PalkintoID" ColumnName="PalkintoID" />
+                <ScalarProperty Name="VoimassaOloPvm" ColumnName="VoimassaOloPvm" />
+                <ScalarProperty Name="TekoID" ColumnName="TekoID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAKteot">
+            <EntityTypeMapping TypeName="ScrumDB2018KModel1.SAKteot">
+              <MappingFragment StoreEntitySet="SAKteot">
+                <ScalarProperty Name="TekoID" ColumnName="TekoID" />
+                <ScalarProperty Name="TeonNimi" ColumnName="TeonNimi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblImages">
+            <EntityTypeMapping TypeName="ScrumDB2018KModel1.tblImages">
+              <MappingFragment StoreEntitySet="tblImages">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="ImageData" ColumnName="ImageData" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
