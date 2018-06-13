@@ -84,7 +84,7 @@ namespace SimpleActOfKindnessApp1.Controllers
                 ViewBag.PalkintoID = model.PalkintoID;
                 ViewBag.VoimassaOloPvm = model.VoimassaOloPvm.ToString("D",culture);   //Dan 5.6.2018
                 ViewBag.TekoID = model.TekoID;
-                ViewBag.PalkinnonKayttoPolku = "/lunastus/UseSinglePrize/"+model.PalkintoID;
+                ViewBag.PalkinnonKayttoPolku = "/lunastus/UseSinglePrize/"+model.PalkintoID.ToString();
 
                 ViewBag.DBMessage = "Tietokantahaku onnistui!";
                 //string json = JsonConvert.SerializeObject(model);
